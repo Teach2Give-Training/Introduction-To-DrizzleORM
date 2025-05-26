@@ -17,7 +17,7 @@ export const stateTable = pgTable('stateTable',{
 export const cityTable = pgTable('cityTable', {
     cityId: serial('cityId').primaryKey(),
     cityName: text('cityName'),
-    stateId: integer('stateId').notNull().references(()=>stateTable.stateId,{onDelete: 'cascade'}),
+    stateId: integer('stateId').notNull().references(()=>stateTable.stateId,{onDelete: 'cascade'}), //fk ref is in stateTable
     createdAt: timestamp('createdAt').defaultNow(),
     updatedAt: timestamp('updatedAt').defaultNow(),
 });
@@ -55,7 +55,7 @@ export const restaurantOwnerTable = pgTable('restaurantOwnerTable', {
 //relation btn city(1) --> (1)state
 export const cityStateRelation = relations(cityTable, ({ one }) => ({
     state: one(stateTable, {
-        fields: [cityTable.stateId],
+        fields: [cityTable.stateId], 
         references: [stateTable.stateId]
     })
 }));

@@ -10,8 +10,7 @@ export const client = new Client({
 
 const main = async () =>{
     await client.connect(); //connect to the database
-    // await drizzle(client);
-    // await client.end()
+   
 }
 
 main().catch(console.error)

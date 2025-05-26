@@ -5,8 +5,8 @@ pnpm init
 ```
 
 ```
-pnpn add dotenv drizzle-orm  pg
-pnpm add -D tsx typescript @types/pg @types/node
+pnpm add dotenv drizzle-orm  pg
+pnpm add -D tsx typescript @types/pg @types/node drizzle-kit
 ```
 
 ### Ts config and drizzle config file initialization
